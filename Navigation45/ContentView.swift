@@ -12,12 +12,22 @@ struct ContentView: View {
         
         
         NavigationStack {
-            Text("This is the root view 🌳")
             
-            NavigationLink(destination: Text("You've arrived to the Second View 🎊")) {//destination shows what will be on the new view
-                Text("Click me!")//the label content shows to the user the link
-            }
-
+            //VStack to organize links top to bottom
+            VStack{
+                
+                Text("This is the root view 🌳")
+                
+                NavigationLink(destination: SecondView()) {//destination shows what will be on the new view
+                    Text("Click me!")//the label content shows to the user the link
+                }
+                
+                //Add another NavigationLink within your VStack with text of your choice for the destination and label
+                
+            }//end of VStack
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }//end of the NavigationStack
 
         
